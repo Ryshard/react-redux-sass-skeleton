@@ -1,0 +1,141 @@
+* {
+    box-sizing: border-box;
+  }
+  
+  body, html {
+    overflow-x: hidden;
+    font-family: Arial, Helvetica, sans-serif
+  }
+  
+
+header, footer {
+    background-color: white;
+    text-align: center;
+}
+
+main {
+    background-color: $color-navy;
+    text-align: center;
+}
+
+.container {
+    max-width: 1000px;
+    margin: 0 auto;
+    padding: 20px;
+}
+
+header .container {
+    text-align: left;
+}
+
+header h2 {
+    font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+    border: solid 2px $color-accent;
+    padding: 10px 20px;
+    border-radius: 2px;
+    display: inline-block;
+    margin: 0;
+}
+
+footer {
+    color: silver;
+    font-size: 14px;
+    line-height: 1.9;
+    a, a:visited{
+        color: #666;
+        text-decoration: none;
+    }
+}
+.page {
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+    align-content: space-between;
+    &>*{
+        display: inline-block;
+    }
+    &>header {
+        flex-basis: 100px;
+    }
+
+    &>main {
+        flex-basis: auto;
+        flex-grow: 1;
+    }
+
+    &>footer {
+        flex-basis: 80px;
+    }
+}
+
+body, html {
+    margin: 0;
+    padding: 0;
+}
+
+
+main h1 {
+    color: white;
+    text-align: center;
+}
+
+.btn {
+    padding: 10px 40px;
+    text-align: center;
+    border-radius: 5px;
+    color: white;
+    border: solid 1px white;
+    margin: 1em auto;
+    display: inline-block;
+    vertical-align: middle;
+
+    &.accent {
+        background-color: $color-accent;
+        color: $color-navy;
+        font-weight: bold;
+
+        &:not(.disabled):hover {
+            background-color: darken($color-accent, 10%);
+        }
+
+        &:not(.disabled) {
+            cursor: pointer;
+        }
+    }
+
+    &.disabled {
+        opacity: 0.5;
+        font-weight: normal;
+    }
+}
+
+.close-btn {
+    font-weight: bold;
+    font-size: 30px;
+    display: inline-block;
+    padding: 5px 10px;
+    line-height: 30px;
+    background-color: white;
+    color: #6e6e6e;
+    border-radius: 10px;
+    border: solid 1px #6e6e6e;
+    cursor: pointer;
+    &:hover {
+        background-color: darken(#d2d2d2, 10%);
+    }
+}
+
+.loader {
+    border: 16px solid #f3f3f3; /* Light grey */
+    border-top: 16px solid $color-accent; /* Blue */
+    border-radius: 50%;
+    width: 120px;
+    height: 120px;
+    animation: spin 1s linear infinite;
+    margin: 20px auto;
+}
+
+@keyframes spin {
+    0% { transform: rotate(0deg); }
+    100% { transform: rotate(360deg); }
+}

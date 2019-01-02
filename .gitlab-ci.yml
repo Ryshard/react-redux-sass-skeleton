@@ -1,0 +1,16 @@
+image: node:8.11.3
+
+pages:
+  stage: deploy
+  script:
+  - npm install
+  - npm run build
+  - npm test
+  - mkdir public
+  - mv docs/* public
+
+  artifacts:
+    paths:
+    - public
+  only:
+  - master

@@ -1,0 +1,73 @@
+.repos-list {
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    width: 100%;
+    justify-content: center;
+}
+
+.repoListItem {
+    background: white;
+    color: #6e6e6e;
+    margin: 0 auto 20px auto;
+    border-radius: 3px;
+    padding: 5px;
+    flex-grow: 1;
+    @include mq($bp-mobile) {
+        flex-basis: 30%;
+        margin: 1.5%;
+    }
+
+    @include fade_in(1s);
+
+    dl {
+        display: flex;
+        flex-direction: row;
+        flex-wrap: wrap;
+        align-content: flex-start;
+        dt,dd {
+            display: inline-block;
+            margin: 0;
+            vertical-align: top;
+            text-align: left;
+            flex-shrink: 1;
+            flex-grow: 1;
+            padding: 5px 0;
+        }
+        dt {
+            flex-basis: 40%;
+        }
+        dd {
+            flex-basis: 58%;
+        }
+
+    }
+
+    img {
+        cursor: pointer;
+    }
+}
+
+.selected {
+    position: relative;
+    margin: 20px;
+    .close-btn {
+        position: absolute;
+        top: -10px;
+        right: -10px;
+    }
+    .repoListItem {
+        padding: 5px 5%;
+        img, h2 {
+            display: inline-block;
+            vertical-align: middle;
+        }
+        img {
+            cursor: auto;
+        }
+        h2 {
+            font-size: 30px;
+            margin-left: 1em;
+        }
+    }
+}
