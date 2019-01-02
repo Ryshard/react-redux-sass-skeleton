@@ -20,7 +20,7 @@ class RepoListItem extends React.Component {
             <div className="repoListItem">
                 <h2>{name}</h2>
                 <p>{description}</p>
-                <a href={url}>See on GitHub</a>
+                <a href={url} target="_blank">See on GitHub</a>
             </div >
         );
     }

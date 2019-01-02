@@ -4,7 +4,7 @@ export const extractReposData = (data) => {
         newData.push({
             name: element.name,
             description: element.description,
-            url: element.url
+            url: element.html_url
         })
     });
     return newData;
