@@ -1,7 +1,7 @@
 {
-  "name": "CtCarsJs",
+  "name": "ReactJs skeleton",
   "version": "1.0.0",
-  "description": "expenses assistant",
+  "description": "ReactJs bootstrap with redux and sass",
   "main": "index.js",
   "scripts": {
     "start": "webpack-dev-server --mode development --open --hot",
@@ -47,5 +47,12 @@
     "sinon": "^7.1.1",
     "style-loader": "^0.23.1",
     "webpack-cli": "^3.1.0"
-  }
+  },
+   "repository": {
+    "type": "git",
+    "url": "git+https://github.com//Ryshard/react-redux-sass-skeleton.git"
+  },
+   "keywords": [
+    "react", "reactjs", "redux", "webpack", "sass"
+  ],
 }
