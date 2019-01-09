@@ -24,8 +24,9 @@ class Home extends React.Component {
 
 		if (existingLoadStatus == ACTION_STATUS.IN_PROGRESS && newLoadStatus == ACTION_STATUS.ERROR) {
 			this.setState({ loadError: true, loading: false });
+			console.log('ERROR');
 		} else if (existingLoadStatus == ACTION_STATUS.IN_PROGRESS && newLoadStatus == ACTION_STATUS.SUCCESS) {
-			// console.log('componentWillReceiveProps, success load detected', reposList);
+			console.log('componentWillReceiveProps, success load detected', reposList);
 			this.setState({
 				loadError: false,
 				loading: false,
@@ -38,20 +39,26 @@ class Home extends React.Component {
 	}
 
 	loadRepos() {
-		// console.log('load repos');
-		this.props.fetchRepos();
+		const { userInput } = this.state;
+		this.props.fetchRepos(userInput);
 	}
 
+	handleInput(e){
+		this.setState({userInput: e.target.value});
+	}
 	render() {
 		const {
 			repos,
 			loading
 		} = this.state;
+		const inputField = false;
 		const btnClass = repos ? 'btn accent disabled' : 'btn accent';
 		return (
 			<div className="container">
-				<h1>My Repos</h1>
-				<button className={btnClass} onClick={this.loadRepos} disabled={repos}>Load Repos</button>
+				<h1>Countries</h1>
+				<h5>source: <a href="https://restcountries.eu" target="_blank">https://restcountries.eu</a></h5>
+				{inputField && <input onChange={this.handleInput} />}
+				<button className={btnClass} onClick={this.loadRepos} disabled={repos}>Load Countries</button>
 				{loading && <div className="loader"></div>}
 				{repos && <ReposList repos={repos} />}
 			</div>
@@ -66,7 +73,7 @@ const mapStateToProps = state => ({
 });
 
 const mapDispatchToProps = dispatch => ({
-	fetchRepos: () => getRepos(dispatch)
+	fetchRepos: (name) => getRepos({dispatch, name})
 });
 
 export default connect(mapStateToProps, mapDispatchToProps)(Home);

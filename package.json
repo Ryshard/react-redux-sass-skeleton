@@ -1,5 +1,5 @@
 {
-  "name": "ReactJs skeleton",
+  "name": "ReactJsSkeleton",
   "version": "1.0.0",
   "description": "ReactJs bootstrap with redux and sass",
   "main": "index.js",

@@ -1,7 +1,7 @@
 import { ENDPOINTS, ACTION_TYPE } from 'constants.js';
 
 
-export const getRepos = (dispatch) => {
+export const getRepos = ({dispatch, name }) => {
     console.log('get repos');
 
     const onSuccess = (response) => {
@@ -22,7 +22,7 @@ export const getRepos = (dispatch) => {
 
     dispatch({ type: ACTION_TYPE.FETCH_REPOS.START });
 
-    fetch(ENDPOINTS.REPOS_LIST)
-        .then(onSuccess)
-        .catch(onReject);
+    fetch(ENDPOINTS.countries.list)
+    .then(onSuccess)
+    .catch(onReject);
 }

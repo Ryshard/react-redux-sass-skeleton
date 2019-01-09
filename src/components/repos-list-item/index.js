@@ -12,15 +12,15 @@ class RepoListItem extends React.Component {
         const { repo } = this.props;
         const {
             name,
-            description,
-            url
+            flag,
+            nativeName
         } = repo;
 
         return (
             <div className="repoListItem">
                 <h2>{name}</h2>
-                <p>{description}</p>
-                <a href={url} target="_blank">See on GitHub</a>
+                <h4><em>({nativeName})</em></h4>
+                {flag && <img src={flag} style={ { maxWidth: '220px' }}/>}
             </div >
         );
     }

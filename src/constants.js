@@ -1,5 +1,13 @@
 export const ENDPOINTS = {
-    REPOS_LIST: 'https://api.github.com/users/ryshard/repos',
+    gitHub: {
+        repos: (name) => `https://api.github.com/users/${name}/repos`
+    },
+    deezer: {
+        artist: (name) => `http://api.deezer.com/artist/${name}`
+    },
+    countries: {
+        list: 'https://restcountries.eu/rest/v2/all'
+    }
 };
 
 export const ACTION_STATUS = {
