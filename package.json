@@ -48,11 +48,15 @@
     "style-loader": "^0.23.1",
     "webpack-cli": "^3.1.0"
   },
-   "repository": {
+  "repository": {
     "type": "git",
     "url": "git+https://github.com//Ryshard/react-redux-sass-skeleton.git"
   },
-   "keywords": [
-    "react", "reactjs", "redux", "webpack", "sass"
-  ],
+  "keywords": [
+    "react",
+    "reactjs",
+    "redux",
+    "webpack",
+    "sass"
+  ]
 }
